@@ -1,88 +1,83 @@
-// variables :
-let num1, num2, solution, operation;
-let num1String, num2String;
+// Variables
+let A,B,solution,operation;
+let AString, BString;
 
-//Métier
-function Calculation(num1, num2, operation){
-  let _solution = undefined;
-    switch(operation){
 
-      case '+':
-        _solution = num1 + num2;
-        break;
-      case '-':
-        _solution = num1 - num2; 
-        break;
 
-      default: 
-        break;
+// Job
+function Calculate(A,B,operation){
+    let solution = undefined;
+    switch (operation) {
+        case '+':
+            solution = A + B;
+            break;
+        case '-':
+            solution = A-B;
+                break;
+        default:
+            break;
     }
-
-    return _solution;
+    return solution;
 }
 
-// 
-function insertNumber(number){
-  if(num1 == undefined){
-    if(num1String == undefined) num1String = '';
-      num1String += number;
-  }
 
-  else {
+// Presentation
+function CliquezNuméro(number){
+    if(A == undefined){
+        if(AString == undefined) AString = '';
+        AString += number;
+    } 
+    else {
+        if(BString == undefined) BString = '';
+        BString += number;
+    } 
 
-    if(num2String == undefined) num2String = '';
-         num2String += number;
-    }
-
-    result();
-   
+    Afficher();
 }
+function Afficher(number){
 
-function result(number){
+    let display = document.getElementById("display");
+    display.value = "";
 
-  let resultInput  = document.getElementById("resultInput");
-  resultInput.value = '';
+    if(A != undefined && B != undefined && operation != undefined){
 
-  if(num1 != undefined && num2 != undefined && operation != undefined){
+        display.value = number;
+    }else{
+        if(AString != undefined)
+        display.value += AString 
+        if(operation != undefined)
+        display.value += operation
+        if(BString != undefined)
+        display.value += BString 
 
-    resultInput.value = number;
-}else{
-    if(num1String != undefined)
-    resultInput.value +=  num1String;
+        }
  
-    if(operation != undefined)
-      resultInput.value += operation;  
-    if(num2String != undefined)
-        resultInput.value += num2String; 
 
+}
+
+
+    function Operation(operationParam){
+        if(operation == undefined){
+            operation = operationParam;
+            A = parseFloat(AString);
+            Afficher();
+        }else{
+            alert(" You have already chosen the operation  " + operation);
+        }
     }
 
+function Equal(){
+    A = parseFloat(AString);
+    B = parseFloat(BString);
+    solution = Calculate(A,B,operation);
+    Afficher(solution);
 }
 
-function Operator(operationParam){
-  if(operation == undefined){
-      operation = operationParam;
-      num1 = parseFloat(num1String);
-      result();
-  }else{
-      alert("Vous avez déjà choisi l'opération " + operation);
-  }
-}
-
-function equal(){
-  num1 = parseFloat(num1String);
-  num2 = parseFloat(num2String);
-  solution = Calculation(num1,num2,operation);
-  result(solution);
-}
-
-function resetCalc(){
-  num1 = undefined;
-  num2 = undefined;
-  num1String = undefined;
-  num2String = undefined;
-  operation = undefined;
-  let resultInput = document.getElementById("resultInput");
-  
-  resultInput.value = "";
+function Init(){
+   A = undefined ;
+   B = undefined ;
+   AString = undefined ;
+   BString = undefined ;
+   let display = document.getElementById("display") ;
+   display.value = "" ;
 }
