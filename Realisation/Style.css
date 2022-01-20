@@ -1,5 +1,5 @@
 *{
-    background-color: rgb(112, 111, 111);
+    background-color: rgb(56, 0, 88);
 }
 
 
@@ -28,25 +28,25 @@ input{
     width: 300px;
     height: 30px;
     border-radius: 10px;
-   border: 3px solid rgb(50, 118, 156);
-   background-color: rgb(177, 174, 174);
+   border: 3px solid rgb(0, 0, 0);
+   background-color: rgb(255, 255, 255);
 }
 button{
     width: 100px;
     height: 40px;
-    border: 1px solid rgb(50, 118, 156);
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 60px;
     margin-bottom: 10px;
     font-size: 30px;
-    background-color: rgb(50, 118, 156);
-    color: #fff;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 button:hover{
-    background-color: black;
+    background-color: rgb(162, 0, 255);
 }
 .C{
     margin-left: 105px;
-    background-color: rgb(30, 58, 95);
+    background-color: rgb(83, 83, 83);
 }
 
 @media only screen and(min-width:700px) {
